@@ -21,6 +21,7 @@ namespace Linq_feladat
         {
             InitializeComponent();
             LoadData("ramen.csv");
+            GetCountries();
         }
 
         void LoadData(string fileName)
@@ -48,36 +49,57 @@ namespace Linq_feladat
             }
             sr.Close();
 
-            Country AddCountry(string orszag)
-            {
-                var ered = (from c in countries where c.Name.Equals(orszag) select c).FirstOrDefault();
-                if (ered == null)  //nincs ilyen ország a listában
-                {
-                    ered = new Country
-                    {
-                        ID = countries.Count,
-                        Name = orszag
-                    };
-                    countries.Add(ered);
-                }
-                return ered;
-            }
-
-            Brand AddBrand(string marka)
-            {
-                var ered = (from c in brands where c.Name.Equals(marka) select c).FirstOrDefault();
-                if (ered == null)  //nincs ilyen ország a listában
-                {
-                    ered = new Brand
-                    {
-                        ID = brands.Count,
-                        Name = marka
-                    };
-                    brands.Add(ered);
-                }
-                return ered;
-            }
+            
         }
 
+        Country AddCountry(string orszag)
+        {
+            var ered = (from c in countries where c.Name.Equals(orszag) select c).FirstOrDefault();
+            if (ered == null)  //nincs ilyen ország a listában
+            {
+                ered = new Country
+                {
+                    ID = countries.Count,
+                    Name = orszag
+                };
+                countries.Add(ered);
+            }
+            return ered;
+        }
+
+        Brand AddBrand(string marka)
+        {
+            var ered = (from c in brands where c.Name.Equals(marka) select c).FirstOrDefault();
+            if (ered == null)  //nincs ilyen ország a listában
+            {
+                ered = new Brand
+                {
+                    ID = brands.Count,
+                    Name = marka
+                };
+                brands.Add(ered);
+            }
+            return ered;
+        }
+
+        void GetCountries()
+        {
+            var ered = from c in countries 
+                       where c.Name.Contains(textBox1.Text) 
+                       orderby c.Name
+                       select c;
+            listBox1.DataSource = ered.ToList();
+            listBox1.DisplayMember = "Name";
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            GetCountries();
+        }
     }
 }
