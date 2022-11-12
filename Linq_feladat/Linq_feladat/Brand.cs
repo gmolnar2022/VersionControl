@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace Linq_feladat
 {
-    class Ramen
+    class Brand
     {
         public int ID { get; set; }
         public string Name { get; set; }
-
-        public Brand Brand { get; set; }
-
-        public int CountryFK { get; set; }
-
-        public Country Country { get; set; }
-
-        public double Rating { get; set; }
     }
 }

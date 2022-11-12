@@ -15,6 +15,7 @@ namespace Linq_feladat
     {
         List<Country> countries = new List<Country>();
         List<Ramen> ramens = new List<Ramen>();
+        List<Brand> brands = new List<Brand>();
 
         public Form1()
         {
@@ -30,8 +31,10 @@ namespace Linq_feladat
             {
                 string[] sor = sr.ReadLine().Split(';');
                 string orszag = sor[2];
+                string marka = sor[0];
                 //    var ered = countries.Where(i => i.Name.Equals(orszag)).FirstOrDefault(); //LINQ
                 Country aktorszag = AddCountry(orszag); //aktuális ország
+                Brand aktmarka = AddBrand(marka);
                 Ramen r = new Ramen
                 {
                     ID = ramens.Count,
@@ -39,7 +42,7 @@ namespace Linq_feladat
                     Country = aktorszag,
                     Rating = Convert.ToDouble(sor[3]),
                     Name = aktorszag.Name,
-                    Brand = sor[0]
+                    Brand = aktmarka
                 };
                 ramens.Add(r);
             }
@@ -56,6 +59,21 @@ namespace Linq_feladat
                         Name = orszag
                     };
                     countries.Add(ered);
+                }
+                return ered;
+            }
+
+            Brand AddBrand(string marka)
+            {
+                var ered = (from c in brands where c.Name.Equals(marka) select c).FirstOrDefault();
+                if (ered == null)  //nincs ilyen ország a listában
+                {
+                    ered = new Brand
+                    {
+                        ID = brands.Count,
+                        Name = marka
+                    };
+                    brands.Add(ered);
                 }
                 return ered;
             }
