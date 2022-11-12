@@ -31,11 +31,21 @@ namespace Linq_feladat
                 string[] sor = sr.ReadLine().Split(';');
                 string orszag = sor[2];
                 //    var ered = countries.Where(i => i.Name.Equals(orszag)).FirstOrDefault(); //LINQ
-                AddCountry(orszag);
+                Country aktorszag = AddCountry(orszag); //aktuális ország
+                Ramen r = new Ramen
+                {
+                    ID = ramens.Count,
+                    CountryFK = aktorszag.ID,
+                    Country = aktorszag,
+                    Rating = Convert.ToDouble(sor[3]),
+                    Name = aktorszag.Name,
+                    Brand = sor[0]
+                };
+                ramens.Add(r);
             }
             sr.Close();
 
-            void AddCountry(string orszag)
+            Country AddCountry(string orszag)
             {
                 var ered = (from c in countries where c.Name.Equals(orszag) select c).FirstOrDefault();
                 if (ered == null)  //nincs ilyen ország a listában
@@ -47,6 +57,7 @@ namespace Linq_feladat
                     };
                     countries.Add(ered);
                 }
+                return ered;
             }
         }
 
