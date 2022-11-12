@@ -94,6 +94,27 @@ namespace Linq_feladat
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Country orszag = (Country)listBox1.SelectedItem;
+            if (orszag == null)
+            {
+                return;
+            }
+            var ered = from r in ramens
+                       where r.CountryFK == orszag.ID
+                       select r;
+            var ered2 = from d in ered
+                        group d.Rating by d.Brand.Name
+                        into f
+                        select new
+                        {
+                            markanev = f.Key,
+                            atlag = Math.Round(f.Average(), 2)
+                        };
+            var ered3 = from h in ered2
+                        orderby h.atlag descending
+                        select h;
+            dataGridView1.DataSource = ered3.ToList();
+
 
         }
 
