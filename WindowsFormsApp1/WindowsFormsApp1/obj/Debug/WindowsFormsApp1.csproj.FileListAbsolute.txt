@@ -13,3 +13,4 @@ C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp1\WindowsFormsApp1\o
 C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
 C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
