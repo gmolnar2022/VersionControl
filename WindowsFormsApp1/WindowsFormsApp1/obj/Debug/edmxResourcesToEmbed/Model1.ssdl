@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Flat">
+    <Key>
+      <PropertyRef Name="FlatSK" />
+    </Key>
+    <Property Name="FlatSK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="Vendor" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Side" Type="nchar" MaxLength="4" Nullable="false" />
+    <Property Name="District" Type="tinyint" Nullable="false" />
+    <Property Name="Elevator" Type="bit" Nullable="false" />
+    <Property Name="NumberOfRooms" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FloorArea" Type="smallint" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="RealEstateModelStoreContainer">
+    <EntitySet Name="Flat" EntityType="Self.Flat" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
+    <EntitySetMapping Name="Flat">
+      <EntityTypeMapping TypeName="RealEstateModel.Flat">
+        <MappingFragment StoreEntitySet="Flat">
+          <ScalarProperty Name="FlatSK" ColumnName="FlatSK" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="Side" ColumnName="Side" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Elevator" ColumnName="Elevator" />
+          <ScalarProperty Name="NumberOfRooms" ColumnName="NumberOfRooms" />
+          <ScalarProperty Name="FloorArea" ColumnName="FloorArea" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

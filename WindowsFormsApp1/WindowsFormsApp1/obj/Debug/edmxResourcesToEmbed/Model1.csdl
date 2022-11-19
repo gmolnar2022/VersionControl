@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Flat">
+    <Key>
+      <PropertyRef Name="FlatSK" />
+    </Key>
+    <Property Name="FlatSK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Vendor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Side" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="District" Type="Byte" Nullable="false" />
+    <Property Name="Elevator" Type="Boolean" Nullable="false" />
+    <Property Name="NumberOfRooms" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FloorArea" Type="Int16" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Flat" EntityType="Self.Flat" />
+  </EntityContainer>
+</Schema>
