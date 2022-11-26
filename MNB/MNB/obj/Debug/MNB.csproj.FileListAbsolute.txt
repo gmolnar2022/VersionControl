@@ -7,3 +7,4 @@ C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.csproj.Genera
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.csproj.CoreCompileInputs.cache
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.exe
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.pdb
+C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.Form1.resources
