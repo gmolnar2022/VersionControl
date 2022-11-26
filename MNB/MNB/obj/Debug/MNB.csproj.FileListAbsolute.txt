@@ -1,7 +1,6 @@
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\bin\Debug\MNB.exe.config
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\bin\Debug\MNB.exe
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\bin\Debug\MNB.pdb
-C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.csproj.AssemblyReference.cache
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.Properties.Resources.resources
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.csproj.GenerateResource.cache
 C:\Users\gmolnar\source\repos\VersionControl\MNB\MNB\obj\Debug\MNB.csproj.CoreCompileInputs.cache
