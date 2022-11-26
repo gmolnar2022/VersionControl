@@ -17,13 +17,35 @@ namespace MNB
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
 
         public Form1()
         {
             InitializeComponent();
             dataGridView1.DataSource = Rates;
+            cbx1.DataSource = Currencies;
             // GetRates();
+            GetCurrencies();
             RefreshData();
+        }
+
+        void GetCurrencies()
+        {
+            MNBArfolyamServiceSoapClient m = new MNBArfolyamServiceSoapClient();
+            GetCurrenciesRequestBody request = new GetCurrenciesRequestBody();
+            GetCurrenciesResponseBody response = m.GetCurrencies(request);
+            string result = response.GetCurrenciesResult;
+            XmlDocument x = new XmlDocument();
+            x.LoadXml(result);
+            MessageBox.Show(result);
+            XmlElement item = x.DocumentElement;
+            int i = 0;
+            while (item.ChildNodes[0].ChildNodes[i] != null)
+            {
+                Currencies.Add(item.ChildNodes[0].ChildNodes[i].InnerText);
+                i++;
+            }
+            m.Close();
         }
 
         private void RefreshData()
@@ -47,19 +69,22 @@ namespace MNB
             xml.LoadXml(GetRates());
             foreach (XmlElement item in xml.DocumentElement)
             {
-                RateData rd = new RateData();
-                Rates.Add(rd);
-                rd.Currency = item.ChildNodes[0].Attributes["curr"].Value;
-                rd.Date = Convert.ToDateTime(item.Attributes["date"].Value);
-                decimal unit = Convert.ToDecimal(item.ChildNodes[0].Attributes["unit"].Value);
-                decimal value = Convert.ToDecimal(item.ChildNodes[0].InnerText);
-                if (unit != 0)
+                if (item.ChildNodes[0] != null)
                 {
-                    rd.Value = value / unit;
-                }
-                else
-                {
-                    rd.Value = value;
+                    RateData rd = new RateData();
+                    Rates.Add(rd);
+                    rd.Currency = item.ChildNodes[0].Attributes["curr"].Value;
+                    rd.Date = Convert.ToDateTime(item.Attributes["date"].Value);
+                    decimal unit = Convert.ToDecimal(item.ChildNodes[0].Attributes["unit"].Value);
+                    decimal value = Convert.ToDecimal(item.ChildNodes[0].InnerText);
+                    if (unit != 0)
+                    {
+                        rd.Value = value / unit;
+                    }
+                    else
+                    {
+                        rd.Value = value;
+                    }
                 }
             }
         }
@@ -76,6 +101,7 @@ namespace MNB
             GetExchangeRatesResponseBody response = mnbService.GetExchangeRates(request);
             string result = response.GetExchangeRatesResult;
             //MessageBox.Show(result);
+             
             mnbService.Close();
             return result;
         }
