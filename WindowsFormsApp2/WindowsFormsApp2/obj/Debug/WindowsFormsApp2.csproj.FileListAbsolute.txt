@@ -1,0 +1,15 @@
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\EntityFramework.dll
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\EntityFramework.xml
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\gmolnar\source\repos\VersionControl\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
